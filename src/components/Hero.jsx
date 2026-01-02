@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
-import avatarDetails from '../assets/avatar.png';
+import avatarDetails from '../assets/a1.jpeg';
 
 const Hero = () => {
     const [text, setText] = useState('');
