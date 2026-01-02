@@ -17,7 +17,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center py-20 bg-slate-900 overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center py-20 bg-white dark:bg-slate-900 overflow-hidden transition-colors duration-300">
             <div className="z-10 w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
                 {/* Avatar - Left Side */}
                 <div className="flex-shrink-0 order-1 md:order-1">
@@ -25,7 +25,7 @@ const Hero = () => {
                         <img
                             src={avatarDetails}
                             alt="Profile"
-                            className="w-full h-full rounded-full object-cover border-4 border-slate-700 shadow-2xl transition-transform duration-500 group-hover:scale-105"
+                            className="w-full h-full rounded-full object-cover border-4 border-slate-200 dark:border-slate-700 shadow-2xl transition-transform duration-500 group-hover:scale-105"
                         />
                     </div>
                 </div>
@@ -33,16 +33,16 @@ const Hero = () => {
                 {/* Content - Right Side */}
                 <div className="flex-1 space-y-8 text-center md:text-left max-w-2xl order-2 md:order-2">
                     <div>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-100 mb-4">
-                            Hi, I'm <span className="text-blue-500">Omkar</span>
+                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-4">
+                            Hi, I'm <span className="text-blue-600 dark:text-blue-500">Omkar</span>
                         </h1>
-                        <p className="text-xl md:text-3xl text-slate-400 font-light flex items-center justify-center md:justify-start gap-2 h-10">
+                        <p className="text-xl md:text-3xl text-slate-600 dark:text-slate-400 font-light flex items-center justify-center md:justify-start gap-2 h-10">
                             {text}
-                            <span className="animate-blink text-blue-500">|</span>
+                            <span className="animate-blink text-blue-600 dark:text-blue-500">|</span>
                         </p>
                     </div>
 
-                    <div className="text-base md:text-lg text-slate-300 leading-relaxed space-y-4">
+                    <div className="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
                         <p>
                             I am an aspiring Web Developer with a Bachelor’s degree in Computer Science and Engineering (B.Tech CSE) from Parul University, Gujarat. I am currently based in Mumbai.
                         </p>
@@ -64,7 +64,7 @@ const Hero = () => {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-10 animate-bounce text-slate-500">
+            <div className="absolute bottom-10 animate-bounce text-slate-400 dark:text-slate-500">
                 <ChevronDown size={32} />
             </div>
         </section>
@@ -74,7 +74,7 @@ const Hero = () => {
 const SocialLink = ({ href, icon, label }) => (
     <a
         href={href}
-        className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-blue-400 transition-all duration-300 border border-slate-700"
+        className="p-3 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-all duration-300 border border-slate-200 dark:border-slate-700"
         aria-label={label}
     >
         {icon}
