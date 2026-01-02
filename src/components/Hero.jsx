@@ -39,9 +39,17 @@ const Hero = () => {
                         <span className="animate-blink text-blue-500">|</span>
                     </p>
 
-                    <p className="text-lg text-slate-300 leading-relaxed max-w-xl mx-auto">
-                        I am a passionate technologist dedicated to building seamless, high-performance web applications. With a keen eye for detail and a love for clean code, I transform complex problems into intuitive digital solutions.
-                    </p>
+                    <div className="text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto space-y-4">
+                        <p>
+                            I am an aspiring Web Developer with a Bachelor’s degree in Computer Science and Engineering (B.Tech CSE) from Parul University, Gujarat. I am currently based in Mumbai.
+                        </p>
+                        <p>
+                            I am a continuous learner who is always eager to explore new technologies and improve my skills. I am particularly interested in backend-focused roles and am currently learning and strengthening my expertise in Java backend development.
+                        </p>
+                        <p>
+                            Java is my strongest programming language, and I enjoy building scalable and reliable backend systems using it. Additionally, I hold a one-year diploma in Neural Networks and Deep Learning, which has provided me with a strong foundation in Machine Learning concepts and fundamentals.
+                        </p>
+                    </div>
 
                     {/* Social Links */}
                     <div className="flex items-center justify-center gap-6 pt-4">
