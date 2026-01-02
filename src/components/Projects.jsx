@@ -1,43 +1,61 @@
 import React from 'react';
 import { Github, ExternalLink, Code } from 'lucide-react';
+import sekilasImage from '../assets/sekilas.png';
+import eazyStickersImage from '../assets/eazystickers.png';
 
 const projects = [
     {
         id: 1,
-        title: 'E-Commerce Dashboard',
-        description: 'A comprehensive generic analytics dashboard with real-time data visualization and order management.',
-        tags: ['React', 'Tailwind', 'Chart.js'],
-        link: '#',
-        github: '#'
+        title: 'Sekilas',
+        description: 'Sekilas Glance is a modern trending news aggregator designed to combat information overload using Trending Keywords.',
+        tags: ['Next.js', 'React19', 'CSS', 'MongoDB', 'Web-Scraping'],
+        link: 'https://glanctrends.vercel.app/',
+        github: 'https://github.com/quvoid/GlanceTrends',
+        image: sekilasImage
     },
     {
         id: 2,
-        title: 'Social Media App',
-        description: 'Full-featured social platform with real-time messaging, post sharing, and user interactions.',
-        tags: ['Next.js', 'Prisma', 'PostgreSQL'],
+        title: 'E-commerce Website',
+        description: 'E-commerce website built with React and CSS.',
+        tags: ['React', 'CSS', 'Javascript'],
         link: '#',
-        github: '#'
+        github: 'https://github.com/quvoid/EazyStickers',
+        image: eazyStickersImage
     },
     {
         id: 3,
-        title: 'AI Image Generator',
-        description: 'Web application that leverages OpenAI API to generate images based on textual prompts.',
-        tags: ['React', 'OpenAI', 'Node.js'],
+        title: 'Student Performance Predictor',
+        description: 'A full-stack Machine Learning web application designed to predict student performance based on academic and behavioral metrics.',
+        tags: ['HTML', 'Tailwind CSS', 'Flask', 'Python', 'Machine Learning'],
         link: '#',
-        github: '#'
+        github: 'https://github.com/quvoid/Student_Performance_Predictor',
+        image: null
     }
 ];
 
 const ProjectCard = ({ project }) => (
     <div className="group relative rounded-xl bg-slate-800 border border-slate-700 overflow-hidden hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-        {/* Abstract Thumbnail Placeholder */}
-        <div className="h-48 bg-slate-700/50 w-full overflow-hidden relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 group-hover:opacity-100 transition-opacity" />
-            {/* Decorative pattern */}
-            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #cbd5e1 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
-            <div className="absolute bottom-4 left-4 p-2 bg-slate-900/90 rounded-lg shadow-sm backdrop-blur-sm border border-slate-700">
-                <Code className="text-blue-500" size={24} />
-            </div>
+        {/* Project Image or Abstract Placeholder */}
+        <div className="h-48 w-full overflow-hidden relative border-b border-slate-700">
+            {project.image ? (
+                <>
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors" />
+                </>
+            ) : (
+                <div className="h-full w-full bg-slate-700/50 relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 group-hover:opacity-100 transition-opacity" />
+                    {/* Decorative pattern */}
+                    <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #cbd5e1 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
+                    <div className="absolute bottom-4 left-4 p-2 bg-slate-900/90 rounded-lg shadow-sm backdrop-blur-sm border border-slate-700">
+                        <Code className="text-blue-500" size={24} />
+                    </div>
+                </div>
+            )}
         </div>
 
         <div className="p-6">
@@ -48,7 +66,7 @@ const ProjectCard = ({ project }) => (
 
             <div className="flex flex-wrap gap-2 mb-6">
                 {project.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 text-xs font-medium text-blue-400 bg-blue-900/30 rounded-full border border-blue-800">
+                    <span key={tag} className="px-3 py-1 text-xs font-medium text-blue-300 bg-blue-900/30 rounded-full border border-blue-800">
                         {tag}
                     </span>
                 ))}

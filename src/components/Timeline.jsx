@@ -4,20 +4,36 @@ import { Briefcase, GraduationCap } from 'lucide-react';
 const experiences = [
     {
         id: 1,
-        type: 'work',
-        role: 'Full Stack Developer',
-        company: 'Tech Solutions Inc.',
-        period: '2023 - Present',
-        description: 'Building scalable web applications using React, Node.js, and Cloud infrastructure. Leading frontend architecture.',
+        type: 'education',
+        role: 'Diploma in Neural networking and Deep Learning',
+        company: 'Parul University',
+        period: '2023 - 2024',
+        description: 'Diploma in Neural networking and Deep Learning. Grade: 7.75/10',
     },
     {
         id: 2,
         type: 'education',
         role: 'Bachelor of Technology',
-        company: 'University of Technology',
-        period: '2019 - 2023',
-        description: 'Major in Computer Science. Graduated with First Class Honors.',
-    }
+        company: 'Parul University',
+        period: '2022 - 2026',
+        description: 'Bachelors in Computer Science and Engineering. Grade: 7.33/10',
+    },
+    {
+        id: 3,
+        type: 'education',
+        role: '12th',
+        company: 'Kirti Doongurse College',
+        period: '2020 - 2022',
+        description: '12th in Science. Percentage: 66.50%',
+    },
+    {
+        id: 4,
+        type: 'education',
+        role: '10th',
+        company: 'Vidya Bhawan',
+        period: '2008 - 2022',
+        description: '10th in SSC board. Percentage: 87.6%',
+    },
 ];
 
 const Timeline = () => {
