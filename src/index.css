@@ -13,6 +13,30 @@
   body {
     @apply bg-slate-50 text-slate-900 dark:bg-[#0a0a0f] dark:text-slate-100 antialiased transition-colors duration-300;
   }
+
+  /* Custom Selection Colors */
+  ::selection {
+    @apply bg-blue-500/30 text-slate-900 dark:text-white;
+  }
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+  transition: background-color 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
 }
 
 /* Hide Scrollbar for clean floating dock look if needed */
@@ -23,6 +47,22 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Text Gradient Utilities */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400;
+  }
+
+  /* Glassmorphism Utilities */
+  .glass {
+    @apply bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-white/20 dark:border-slate-700/30;
+  }
+
+  .glass-heavy {
+    @apply bg-white/20 dark:bg-slate-900/60 backdrop-blur-lg border border-white/30 dark:border-slate-700/40;
+  }
 }
 
 /* Custom Animation Utilities */
