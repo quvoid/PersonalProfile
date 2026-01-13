@@ -17,8 +17,8 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center py-20 bg-white dark:bg-slate-900 overflow-hidden transition-colors duration-300">
-            <div className="z-10 w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
+        <section className="relative h-full flex items-center justify-center py-10 px-6 overflow-hidden transition-colors duration-300">
+            <div className="z-10 w-full max-w-full flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
                 {/* Avatar - Left Side */}
                 <div className="flex-shrink-0 order-1 md:order-1">
                     <div className="relative group w-64 h-64 md:w-96 md:h-96">
@@ -31,34 +31,36 @@ const Hero = () => {
                 </div>
 
                 {/* Content - Right Side */}
-                <div className="flex-1 space-y-8 text-center md:text-left max-w-2xl order-2 md:order-2">
-                    <div>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-4">
-                            Hi, I'm <span className="text-blue-600 dark:text-blue-500">Omkar</span>
-                        </h1>
-                        <p className="text-xl md:text-3xl text-slate-600 dark:text-slate-400 font-light flex items-center justify-center md:justify-start gap-2 h-10">
-                            {text}
-                            <span className="animate-blink text-blue-600 dark:text-blue-500">|</span>
-                        </p>
+                <div className="flex-1 text-center md:text-left z-10">
+                    <h2 className="text-sm font-bold tracking-widest text-blue-500 uppercase mb-2">
+                        <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
+                        Available for hire
+                    </h2>
+
+                    <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight text-slate-900 dark:text-white">
+                        Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Omkar</span>
+                    </h1>
+
+                    <div className="text-xl md:text-2xl font-medium text-slate-600 dark:text-slate-300 mb-6 flex items-center justify-center md:justify-start gap-2 h-8">
+                        <span>Full Stack Developer</span>
+                        <span className="w-0.5 h-6 bg-slate-400 animate-blink">|</span>
                     </div>
 
-                    <div className="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
-                        <p>
-                            I am an aspiring Web Developer with a Bachelor’s degree in Computer Science and Engineering (B.Tech CSE) from Parul University, Gujarat. I am currently based in Mumbai.
-                        </p>
-                        <p>
-                            I am a continuous learner who is always eager to explore new technologies and improve my skills. I am particularly interested in backend-focused roles and am currently learning and strengthening my expertise in Java backend development.
-                        </p>
-                        <p>
-                            Java is my strongest programming language, and I enjoy building scalable and reliable backend systems using it. Additionally, I hold a one-year diploma in Neural Networks and Deep Learning, which has provided me with a strong foundation in Machine Learning concepts and fundamentals.
-                        </p>
-                    </div>
+                    <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-lg mx-auto md:mx-0 mb-8">
+                        Building scalable backend systems and pixel-perfect web experiences.
+                        Specialized in <span className="text-slate-900 dark:text-slate-200 font-semibold">Java</span>,
+                        <span className="text-slate-900 dark:text-slate-200 font-semibold"> React</span>, and
+                        <span className="text-slate-900 dark:text-slate-200 font-semibold"> Machine Learning</span>.
+                    </p>
 
-                    {/* Social Links */}
-                    <div className="flex items-center justify-center md:justify-start gap-6 pt-2">
-                        <SocialLink href="https://github.com/quvoid" icon={<Github size={28} />} label="GitHub" />
-                        <SocialLink href="https://www.linkedin.com/in/omkar-rakshe-957ab5324" icon={<Linkedin size={28} />} label="LinkedIn" />
-                        <SocialLink href="mailto:omkarrakshe2808@gmail.com" icon={<Mail size={28} />} label="Email" />
+                    <div className="flex items-center justify-center md:justify-start gap-4">
+                        <SocialLink href="https://github.com/Start-sys" icon={<Github size={20} />} label="GitHub" />
+                        <SocialLink href="https://linkedin.com/in/omkar-rakshe" icon={<Linkedin size={20} />} label="LinkedIn" />
+                        <SocialLink href="mailto:omkarrakshe2808@gmail.com" icon={<Mail size={20} />} label="Email" />
+
+                        <a href="#projects" className="ml-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-colors shadow-lg shadow-blue-500/20">
+                            View Work
+                        </a>
                     </div>
                 </div>
             </div>
@@ -71,14 +73,39 @@ const Hero = () => {
     );
 };
 
-const SocialLink = ({ href, icon, label }) => (
-    <a
-        href={href}
-        className="p-3 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-all duration-300 border border-slate-200 dark:border-slate-700"
-        aria-label={label}
-    >
-        {icon}
-    </a>
-);
+// Magnetic Button Component
+const SocialLink = ({ href, icon, label }) => {
+    const ref = React.useRef(null);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (e) => {
+        const { clientX, clientY } = e;
+        const { left, top, width, height } = ref.current.getBoundingClientRect();
+        const center = { x: left + width / 2, y: top + height / 2 };
+
+        const distance = { x: clientX - center.x, y: clientY - center.y };
+
+        // Magnet strength
+        setPosition({ x: distance.x * 0.3, y: distance.y * 0.3 });
+    };
+
+    const handleMouseLeave = () => {
+        setPosition({ x: 0, y: 0 });
+    };
+
+    return (
+        <a
+            ref={ref}
+            href={href}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
+            className="p-3 rounded-full bg-slate-100/50 hover:bg-slate-200/50 dark:bg-slate-800/50 dark:hover:bg-slate-700/50 text-slate-700 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors duration-200 border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm"
+            aria-label={label}
+        >
+            {icon}
+        </a>
+    );
+};
 
 export default Hero;

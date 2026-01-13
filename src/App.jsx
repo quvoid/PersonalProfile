@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Hero from './components/Hero';
-import Timeline from './components/Timeline';
-import Projects from './components/Projects';
-import Footer from './components/Footer';
+import CinematicBackground from './components/CinematicBackground';
+import BentoLayout from './components/BentoLayout';
+import Dock from './components/Dock';
 import { Sun, Moon } from 'lucide-react';
 
 function App() {
@@ -21,18 +20,22 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen font-sans text-slate-900 bg-white dark:bg-slate-900 dark:text-slate-100 selection:bg-blue-500/30 transition-colors duration-300">
-      <button
-        onClick={toggleTheme}
-        className="fixed top-4 right-4 z-50 p-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 shadow-lg hover:scale-110 transition-transform duration-300"
-        aria-label="Toggle Theme"
-      >
-        {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
-      </button>
-      <Hero />
-      <Timeline />
-      <Projects />
-      <Footer />
+    <div className="min-h-screen font-sans text-slate-900 dark:text-slate-100 selection:bg-blue-500/30 overflow-x-hidden">
+      <CinematicBackground />
+
+      <div className="relative z-10">
+        <button
+          onClick={toggleTheme}
+          className="fixed top-4 right-4 z-[60] p-3 rounded-full bg-slate-100/10 dark:bg-slate-800/20 backdrop-blur-md text-slate-900 dark:text-slate-100 shadow-lg border border-white/10 hover:scale-110 transition-transform duration-300"
+          aria-label="Toggle Theme"
+        >
+          {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
+        </button>
+
+        <BentoLayout />
+
+        <Dock />
+      </div>
     </div>
   );
 }

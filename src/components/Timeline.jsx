@@ -36,9 +36,11 @@ const experiences = [
     },
 ];
 
+import TiltCard from './TiltCard';
+
 const Timeline = () => {
     return (
-        <section className="py-20 px-4 relative bg-white dark:bg-slate-900 transition-colors duration-300" id="experience">
+        <section className="py-20 px-4 relative transition-colors duration-300" id="experience">
             <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 dark:text-slate-100">
                     Education & Experience
@@ -49,20 +51,24 @@ const Timeline = () => {
                         <div key={item.id} className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group ${index % 2 === 0 ? '' : ''}`}>
 
                             {/* Icon */}
-                            <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-md z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                            <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm shadow-md z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
                                 {item.type === 'work' ? <Briefcase size={18} className="text-blue-600 dark:text-blue-500" /> : <GraduationCap size={18} className="text-purple-600 dark:text-purple-500" />}
                             </div>
 
-                            {/* Content Card */}
-                            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm hover:shadow-md transition-shadow duration-300">
-                                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
-                                    <h3 className="font-bold text-lg text-slate-800 dark:text-slate-100">{item.role}</h3>
-                                    <span className="text-sm font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded">{item.period}</span>
-                                </div>
-                                <div className="text-blue-600 dark:text-blue-400 font-medium mb-2">{item.company}</div>
-                                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                                    {item.description}
-                                </p>
+                            {/* Content Card with Tilt Effect */}
+                            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)]">
+                                <TiltCard className="rounded-xl">
+                                    <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
+                                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+                                            <h3 className="font-bold text-lg text-slate-800 dark:text-slate-100">{item.role}</h3>
+                                            <span className="text-sm font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded">{item.period}</span>
+                                        </div>
+                                        <div className="text-blue-600 dark:text-blue-400 font-medium mb-2">{item.company}</div>
+                                        <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                </TiltCard>
                             </div>
                         </div>
                     ))}
