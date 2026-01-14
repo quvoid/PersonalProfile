@@ -5,11 +5,12 @@ import Projects from './Projects';
 import Timeline from './Timeline';
 import TechStack from './TechStack';
 import GithubGraph from './GithubGraph';
+import Contact from './Contact';
 import { MapPin, Cpu, Music } from 'lucide-react';
 
 const BentoLayout = () => {
     return (
-        <div className="max-w-7xl mx-auto px-4 py-8 pb-48 grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
+        <div className="max-w-7xl mx-auto px-4 py-8 pb-32 grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
 
             {/* HERO CELL - 2x2 */}
             <div className="md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden relative border border-slate-200/20 dark:border-slate-700/30 bg-white/5 dark:bg-slate-900/20 backdrop-blur-sm">
@@ -58,8 +59,6 @@ const BentoLayout = () => {
                 <TechStack />
             </div>
 
-
-
             {/* GITHUB CONTRIBUTIONS CELL - 3 cols wide */}
             <TiltCard className="md:col-span-3 md:row-span-1 h-full min-h-[300px]">
                 <div className="bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-slate-200/20 dark:border-slate-700/30 rounded-3xl p-6 h-full flex flex-col relative overflow-hidden">
@@ -99,8 +98,14 @@ const BentoLayout = () => {
                 <Timeline />
             </div>
 
+            {/* CONTACT SECTION (Full Width) */}
+            <div className="md:col-span-3 mt-8">
+                <Contact />
+            </div>
+
         </div>
     );
 };
 
 export default BentoLayout;
+

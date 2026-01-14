@@ -4,6 +4,7 @@ import CinematicBackground from './components/CinematicBackground';
 import BentoLayout from './components/BentoLayout';
 import Dock from './components/Dock';
 import LoadingScreen from './components/LoadingScreen';
+import Footer from './components/Footer';
 import { Sun, Moon } from 'lucide-react';
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
 
             <BentoLayout />
 
+            <Footer />
             <Dock />
           </div>
         </div>
@@ -75,4 +77,5 @@ function App() {
 }
 
 export default App;
+
 

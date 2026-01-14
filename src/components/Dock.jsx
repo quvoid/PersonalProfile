@@ -6,7 +6,12 @@ const Dock = () => {
     const mouseX = useMotionValue(null);
 
     return (
-        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-4">
+        <motion.div
+            drag
+            dragMomentum={false}
+            initial={{ x: "-50%" }}
+            className="fixed bottom-8 left-1/2 z-50 px-4 cursor-grab active:cursor-grabbing"
+        >
             <motion.div
                 onMouseMove={(e) => mouseX.set(e.pageX)}
                 onMouseLeave={() => mouseX.set(null)}
@@ -17,7 +22,7 @@ const Dock = () => {
                 <DockIcon mouseX={mouseX} icon={<FolderGit2 size={24} />} label="Projects" href="#projects" />
                 <DockIcon mouseX={mouseX} icon={<Mail size={24} />} label="Contact" href="mailto:omkarrakshe2808@gmail.com" />
             </motion.div>
-        </div>
+        </motion.div>
     );
 };
 
