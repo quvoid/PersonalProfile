@@ -118,9 +118,9 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-sm font-bold tracking-widest text-blue-500 uppercase mb-2"
+                        className="text-sm font-bold tracking-widest text-amber-500 uppercase mb-2"
                     >
-                        <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
+                        <span className="inline-block w-2 h-2 bg-amber-500 rounded-full mr-2 animate-pulse"></span>
                         Available for hire
                     </motion.h2>
 
@@ -161,16 +161,16 @@ const Hero = () => {
                         transition={{ delay: 0.6 }}
                         className="flex items-center justify-center md:justify-start gap-4"
                     >
-                        <MagneticButton href="https://github.com/Start-sys" className="p-3 rounded-full bg-slate-100/50 hover:bg-slate-200/50 dark:bg-slate-800/50 dark:hover:bg-slate-700/50 text-slate-700 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 transition-colors">
+                        <MagneticButton href="https://github.com/Start-sys" className="p-3 rounded-full bg-slate-100/50 hover:bg-slate-200/50 dark:bg-slate-800/50 dark:hover:bg-slate-700/50 text-slate-700 hover:text-amber-600 dark:text-slate-400 dark:hover:text-amber-400 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 transition-colors">
                             <Github size={20} />
                         </MagneticButton>
 
-                        <MagneticButton href="https://linkedin.com/in/omkar-rakshe" className="p-3 rounded-full bg-slate-100/50 hover:bg-slate-200/50 dark:bg-slate-800/50 dark:hover:bg-slate-700/50 text-slate-700 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 transition-colors">
+                        <MagneticButton href="https://linkedin.com/in/omkar-rakshe" className="p-3 rounded-full bg-slate-100/50 hover:bg-slate-200/50 dark:bg-slate-800/50 dark:hover:bg-slate-700/50 text-slate-700 hover:text-amber-600 dark:text-slate-400 dark:hover:text-amber-400 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 transition-colors">
                             <Linkedin size={20} />
                         </MagneticButton>
 
                         <div className="relative group">
-                            <MagneticButton onClick={handleCopyEmail} className="p-3 rounded-full bg-slate-100/50 hover:bg-slate-200/50 dark:bg-slate-800/50 dark:hover:bg-slate-700/50 text-slate-700 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 transition-colors cursor-pointer">
+                            <MagneticButton onClick={handleCopyEmail} className="p-3 rounded-full bg-slate-100/50 hover:bg-slate-200/50 dark:bg-slate-800/50 dark:hover:bg-slate-700/50 text-slate-700 hover:text-amber-600 dark:text-slate-400 dark:hover:text-amber-400 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 transition-colors cursor-pointer">
                                 <Mail size={20} />
                             </MagneticButton>
                             <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs bg-slate-800 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
@@ -179,7 +179,7 @@ const Hero = () => {
                         </div>
 
                         <MagneticButton className="ml-4">
-                            <a href="#projects" className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-colors shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 flex items-center gap-2">
+                            <a href="#projects" className="px-6 py-2.5 bg-amber-500 hover:bg-amber-600 text-white rounded-full font-medium transition-colors shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 flex items-center gap-2">
                                 View Work
                             </a>
                         </MagneticButton>

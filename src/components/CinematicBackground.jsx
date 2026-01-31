@@ -25,31 +25,31 @@ const CinematicBackground = () => {
         return () => clearInterval(interval);
     }, []);
 
-    // Time-based color palettes
+    // Time-based color palettes (Yellow/Gold Theme)
     const timeColors = {
         morning: {
-            overlay: 'from-transparent via-orange-500/5 dark:via-orange-900/10 to-yellow-500/5 dark:to-yellow-900/10',
-            orb1: 'bg-orange-400/20 dark:bg-orange-600/10',
-            orb2: 'bg-yellow-400/15 dark:bg-yellow-600/8',
-            orb3: 'bg-pink-400/10 dark:bg-pink-600/6',
+            overlay: 'from-transparent via-yellow-200/10 dark:via-yellow-500/5 to-amber-200/10 dark:to-amber-500/5',
+            orb1: 'bg-yellow-300/30 dark:bg-yellow-500/10',
+            orb2: 'bg-amber-200/20 dark:bg-amber-500/10',
+            orb3: 'bg-orange-100/20 dark:bg-orange-400/5',
         },
         afternoon: {
-            overlay: 'from-transparent via-blue-500/5 dark:via-blue-900/10 to-purple-500/5 dark:to-purple-900/10',
-            orb1: 'bg-blue-400/20 dark:bg-blue-600/10',
-            orb2: 'bg-purple-400/15 dark:bg-purple-600/8',
-            orb3: 'bg-indigo-400/10 dark:bg-indigo-600/6',
+            overlay: 'from-transparent via-yellow-500/5 dark:via-yellow-600/10 to-orange-400/5 dark:to-orange-600/10',
+            orb1: 'bg-yellow-400/20 dark:bg-yellow-500/10',
+            orb2: 'bg-orange-300/20 dark:bg-orange-600/10',
+            orb3: 'bg-amber-300/15 dark:bg-amber-600/5',
         },
         evening: {
-            overlay: 'from-transparent via-purple-500/5 dark:via-purple-900/10 to-pink-500/5 dark:to-pink-900/10',
-            orb1: 'bg-purple-400/20 dark:bg-purple-600/10',
-            orb2: 'bg-pink-400/15 dark:bg-pink-600/8',
-            orb3: 'bg-orange-400/10 dark:bg-orange-600/6',
+            overlay: 'from-transparent via-amber-500/5 dark:via-amber-700/10 to-red-400/5 dark:to-red-900/10',
+            orb1: 'bg-amber-500/20 dark:bg-amber-600/10',
+            orb2: 'bg-orange-400/20 dark:bg-orange-700/10',
+            orb3: 'bg-yellow-600/15 dark:bg-yellow-800/5',
         },
         night: {
-            overlay: 'from-transparent via-blue-500/5 dark:via-blue-900/10 to-emerald-500/5 dark:to-emerald-900/10',
-            orb1: 'bg-blue-400/20 dark:bg-blue-600/10',
-            orb2: 'bg-indigo-400/15 dark:bg-indigo-600/8',
-            orb3: 'bg-purple-400/10 dark:bg-purple-600/6',
+            overlay: 'from-transparent via-yellow-900/5 dark:via-yellow-900/10 to-amber-900/5 dark:to-amber-950/10',
+            orb1: 'bg-yellow-600/10 dark:bg-yellow-700/5',
+            orb2: 'bg-amber-700/10 dark:bg-amber-800/5',
+            orb3: 'bg-orange-800/5 dark:bg-orange-900/5',
         },
     };
 
