@@ -13,13 +13,13 @@ const BentoLayout = () => {
         <div className="max-w-7xl mx-auto px-4 py-8 pb-32 grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
 
             {/* HERO CELL - 2x2 */}
-            <div className="md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden relative border border-slate-200/20 dark:border-slate-700/30 bg-white/5 dark:bg-slate-900/20 backdrop-blur-sm">
+            <div className="md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden relative glass">
                 <Hero />
             </div>
 
             {/* LOCATION CELL - 1x1 */}
             <TiltCard className="md:col-span-1 md:row-span-1 h-full min-h-[200px]">
-                <div className="bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-slate-200/20 dark:border-slate-700/30 rounded-3xl p-6 h-full flex flex-col justify-between overflow-hidden relative">
+                <div className="glass rounded-3xl p-6 h-full flex flex-col justify-between overflow-hidden relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10" />
                     <div className="flex justify-between items-start z-10">
                         <span className="text-sm font-medium text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full">Location</span>
@@ -37,7 +37,7 @@ const BentoLayout = () => {
 
             {/* STATUS CELL - 1x1 */}
             <TiltCard className="md:col-span-1 md:row-span-1 h-full min-h-[200px]">
-                <div className="bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-slate-200/20 dark:border-slate-700/30 rounded-3xl p-6 h-full flex flex-col justify-between overflow-hidden relative group">
+                <div className="glass rounded-3xl p-6 h-full flex flex-col justify-between overflow-hidden relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10" />
                     <div className="flex justify-between items-start z-10">
                         <span className="text-sm font-medium text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full">Status</span>
@@ -61,7 +61,7 @@ const BentoLayout = () => {
 
             {/* GITHUB CONTRIBUTIONS CELL - 3 cols wide */}
             <TiltCard className="md:col-span-3 md:row-span-1 h-full min-h-[300px]">
-                <div className="bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-slate-200/20 dark:border-slate-700/30 rounded-3xl p-6 h-full flex flex-col relative overflow-hidden">
+                <div className="glass rounded-3xl p-6 h-full flex flex-col relative overflow-hidden">
                     <div className="absolute inset-0 bg-slate-900/5 dark:bg-white/5" />
 
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 z-10 gap-4 md:gap-0">

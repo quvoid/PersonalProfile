@@ -66,7 +66,7 @@ const CinematicBackground = () => {
     return (
         <div ref={ref} className="fixed inset-0 overflow-hidden pointer-events-none z-0">
             {/* Base gradient background */}
-            <div className="absolute inset-0 bg-slate-50/50 dark:bg-[#030712] transition-colors duration-700" />
+            <div className="absolute inset-0 bg-slate-100 dark:bg-[#030712] transition-colors duration-700" />
 
             {/* Time-aware Overlay Gradient */}
             <div className={`absolute inset-0 bg-gradient-to-b transition-all duration-[2000ms] ${currentPalette.overlay}`} />
